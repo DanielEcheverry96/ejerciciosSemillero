@@ -22,34 +22,36 @@ export class CreacionPersonaComponent implements OnInit {
     nombre: string,
     apellido: string,
     tipoIdentificacion: string
-  }[] = [
-    {
-      'id': 1,
-      'numIdentificacion': '1034526578',
-      'nombre': 'Pepe',
-      'apellido': 'Perez',
-      'tipoIdentificacion': this.tipoIdentificacion[0]
-    },
-    {
-      'id': 2,
-      'numIdentificacion': '1739486378342',
-      'nombre': 'Sarah',
-      'apellido': 'Gonzales',
-      'tipoIdentificacion': this.tipoIdentificacion[1]
-    },
-    {
-      'id': 3,
-      'numIdentificacion': '34356574723',
-      'nombre': 'Carlos',
-      'apellido': 'Marin',
-      'tipoIdentificacion': this.tipoIdentificacion[2]
-    }
-  ];
+  }[];
 
 
   constructor() { }
 
   ngOnInit() {
+
+    this.personas = [
+      {
+        'id': 1,
+        'numIdentificacion': '1034526578',
+        'nombre': 'Pepe',
+        'apellido': 'Perez',
+        'tipoIdentificacion': this.tipoIdentificacion[0]
+      },
+      {
+        'id': 2,
+        'numIdentificacion': '1739486378342',
+        'nombre': 'Sarah',
+        'apellido': 'Gonzales',
+        'tipoIdentificacion': this.tipoIdentificacion[1]
+      },
+      {
+        'id': 3,
+        'numIdentificacion': '34356574723',
+        'nombre': 'Carlos',
+        'apellido': 'Marin',
+        'tipoIdentificacion': this.tipoIdentificacion[2]
+      }
+    ];
 
   }
 
