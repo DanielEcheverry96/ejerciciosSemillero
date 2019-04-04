@@ -1,3 +1,11 @@
-<p>
-  creacion-persona works!
-</p>
+<h3>Lista de personas creadas:</h3>
+
+<ul>
+  <li *ngFor="let persona of personas">
+    <p>Id: {{ persona.id }}</p>
+    <p>Tipo Identificación: {{ persona.tipoIdentificacion }}</p>
+    <p>Número Identificación: {{ persona.numIdentificacion }}</p>
+    <p>Nombre: {{ persona.nombre }}</p>
+    <p>Apellido: {{ persona.apellido }}</p>
+  </li>
+</ul>
