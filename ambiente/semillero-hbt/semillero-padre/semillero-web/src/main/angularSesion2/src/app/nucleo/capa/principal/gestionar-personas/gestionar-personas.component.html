@@ -1,0 +1,54 @@
+<h2>{{ title }}</h2>
+
+<div>
+  <div class="form-row">  
+    <div class="form-group col-md-6">
+        <label for="tipoIdentificacion">Tipo Identificación</label>
+          <select id="tipoIdentificacion" name="tipoIdentificacion" class="form-control" required>
+              <option *ngFor="let ti of tipoIdentificaciones" [value]="ti">{{ti}}</option>
+          </select>
+      </div>
+      <div class="form-group col-md-6">
+          <label for="numeroIdentificacion">Número Identificación</label>
+          <input id="numeroIdentificacion" name="numeroIdentificacion" type="number" class="form-control"  placeholder="Numero" required/>
+      </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-md-10">
+          <input class="btn btn-default" value="Consultar" type="submit" />
+      </div>
+  </div>
+
+  <section>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>No. Identifición</th>
+              <th>Tipo Identificación</th>
+              <th>Fecha Nacimiento </th>
+              <th>Sexo</th>
+              <th>Mayor Edad</th>
+              <th>Acciones</th>
+            </tr>
+        </thead>
+      <tbody *ngIf="personas.length>0">
+          <tr *ngFor="let per of personas">
+            <td scope="col">{{ per.nombre | lowercase }}</td>
+            <td scope="col">{{ per.apellido | lowercase }}</td>
+            <td scope="col">{{ per.numeroIdentificacion }}</td>
+            <td scope="col">{{ per.tipoIdentificacion | lowercase}}</td>
+            <td scope="col">{{ per.fechaNacimiento | date: 'dd/MM/yyyy' }}</td>
+            <td scope="col">{{ per.sexo | lowercase}}</td>
+            <td scope="col">{{ per.mayorEdad }}</td>
+            <td>
+              <a routerLink="personas-editar" routerLinkActive="router-link-active" class="btn btn-default"><span>Editar Persona</span></a>
+              <input class="btn btn-default" value="Eliminar" type="submit" />
+              <input class="btn btn-default" value="Consultar" type="submit" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </section>
+</div>

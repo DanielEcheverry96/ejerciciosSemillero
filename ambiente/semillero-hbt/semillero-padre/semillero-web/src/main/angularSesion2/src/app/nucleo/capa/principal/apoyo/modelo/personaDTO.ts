@@ -5,5 +5,6 @@ export interface PersonaDTO {
     tipoIdentificacion: string;
     numeroIdentificacion: number | string;
     mayorEdad: boolean;
+    fechaNacimiento: Date;
     sexo: string;
 }

@@ -21,6 +21,7 @@ export class ApoyoComponent implements OnInit {
       tipoIdentificacion: '',
       numeroIdentificacion: '',
       mayorEdad: false,
+      fechaNacimiento: new Date(),
       sexo: ''
     };
 

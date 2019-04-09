@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { PersonaDTO } from '../apoyo/modelo/personaDTO';
 
 @Component({
-  selector: 'app-creacion-personas',
-  templateUrl: './creacion-personas.component.html'
+  selector: 'app-edicion-personas',
+  templateUrl: './edicion-personas.component.html',
+  styleUrls: []
 })
-export class CreacionPersonasComponent implements OnInit {
+export class EdicionPersonasComponent implements OnInit {
 
   public tipoIdentificaciones: string[] = [
     'Cedula ciudadania',
@@ -14,9 +15,8 @@ export class CreacionPersonasComponent implements OnInit {
   ];
 
   public persona: PersonaDTO;
-  public personas: PersonaDTO[];
 
-  public title = 'Crear Persona';
+  public title = 'Editar Persona';
 
   constructor() { }
 
@@ -31,23 +31,6 @@ export class CreacionPersonasComponent implements OnInit {
       fechaNacimiento: new Date(),
       sexo: ''
     };
-
-    this.personas = [];
-  }
-
-  mostrar(persona: PersonaDTO): void {
-  }
-
-  ocultar(): void {
-
-  }
-
-  guardar(): void {
-    this.personas.push(this.persona);
-  }
-
-  private borrar(): void {
-
   }
 
 }

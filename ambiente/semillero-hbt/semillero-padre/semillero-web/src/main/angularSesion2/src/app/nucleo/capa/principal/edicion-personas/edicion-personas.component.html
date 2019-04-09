@@ -1,11 +1,11 @@
 <h2>{{ title }}</h2>
 
-<!-- Crear persona -->
+<!-- Editar persona -->
 <form #personaForm="ngForm">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="tipoIdentificacion">Tipo Identificación</label>
-            <select id="tipoIdentificacion" name="tipoIdentificacion" class="form-control" [(ngModel)]="persona.tipoIdentificacion" required>
+            <select id="tipoIdentificacion" name="tipoIdentificacion" class="form-control" [(ngModel)]="persona.tipoIdentificacion" disabled="true" required>
                 <option *ngFor="let ti of tipoIdentificaciones" [value]="ti">{{ti}}</option>
             </select>
         </div>
@@ -49,7 +49,7 @@
     </div>
     <div class="form-group row">
         <div class="col-md-10">
-            <input class="btn btn-default" value="Ingresar" type="submit" (click)="guardar();" [disabled]="!personaForm.form.valid" />
+            <input class="btn btn-default" value="Editar" type="submit" (click)="Editar();" [disabled]="!personaForm.form.valid" />
         </div>
     </div>
 
