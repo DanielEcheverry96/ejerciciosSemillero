@@ -2,6 +2,9 @@ package com.hbt.semillero.dto;
 
 import java.io.Serializable;
 
+/**
+ * Clase que permite crear resultados de algún proceso de la aplicación
+ */
 public class ResultadoDTO implements Serializable{
 	
 

@@ -111,7 +111,7 @@ public class ServiciosRest {
 	/**
 	 * Permite obtener las personas con cierto Tipo de Identificación y Número Identificación
 	 * El acceso al metodo GET por el servicio Rest se hace por medio del pathServer/consultarPersonas
-	 * @param tipoIdentificacion Tipo de Identificación de la persona -> ["CC", "TI", "Pasaporte"]
+	 * @param tipoIdentificacion Tipo de Identificación de la persona -> "CC" o "TI" o "Pasaporte"]
 	 * @param numeroIdentificacion Número de Identificación de la persona
 	 * @return Lista con objetos JSON que contiene las personas
 	 */

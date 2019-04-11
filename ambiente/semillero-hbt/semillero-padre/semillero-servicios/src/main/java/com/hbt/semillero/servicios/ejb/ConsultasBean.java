@@ -18,6 +18,13 @@ import com.hbt.semillero.entidades.Persona;
 import com.hbt.semillero.entidades.Vendedor;
 import com.hbt.semillero.servicios.interfaces.IConsultasBeanLocal;
 
+
+/**
+ * Clase que implementa los metodos de consulta a la base de datos y 
+ * los expone por medio de la interfaz IConsultasBeanLocal
+ * @author Daniel Echeverry
+ *
+ */
 @Stateless
 public class ConsultasBean implements IConsultasBeanLocal{
 	

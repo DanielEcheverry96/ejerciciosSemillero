@@ -2,6 +2,9 @@ package com.hbt.semillero.dto;
 
 import java.io.Serializable;
 
+/**
+ * Clase que permite pasar los valores de las propiedades de un Objeto Marca
+ */
 public class MarcaDTO implements Serializable{
 
 	private Long idMarca;

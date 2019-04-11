@@ -9,6 +9,12 @@ import com.hbt.semillero.entidades.Linea;
 import com.hbt.semillero.entidades.Marca;
 import com.hbt.semillero.entidades.Persona;
 
+
+/**
+ * Interface que encapsula los metodos del Servicio para consultar en la base de datos
+ * @author Daniel Echeverry
+ *
+ */
 @Local
 public interface IConsultasBeanLocal {
 	
