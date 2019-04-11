@@ -75,7 +75,7 @@ public class ConsultasBean implements IConsultasBeanLocal{
 	 * Permite consultar las personas almacenadas en la Base de Datos
 	 */
 	public List<Persona> consultarPersonas(String tipoIdentificacion, String numeroIdentificacion) {
-		return entityManager.createQuery("Select per FROM Persona per where per.tipoIdentificacion=:tipoIdentificacion and per.numeroIdentificacion=:numeroIdentificacion")
+		return entityManager.createQuery("Select per FROM Persona per where per.tipoIdentificacion=:tipoIdentificacion AND per.numeroIdentificacion=:numeroIdentificacion")
 				.setParameter("tipoIdentificacion", tipoIdentificacion)
 				.setParameter("numeroIdentificacion", numeroIdentificacion).getResultList();
 	}
@@ -88,6 +88,7 @@ public class ConsultasBean implements IConsultasBeanLocal{
 		
 		Persona persona = entityManager.find(Persona.class, personaDTO.getIdPersona());
 		
+		persona.setIdPersona(personaDTO.getIdPersona());
 		persona.setNombres(personaDTO.getNombres());
 		persona.setApellidos(personaDTO.getApellidos());
 		persona.setTipoIdentificacion(personaDTO.getTipoIdentificacion());
