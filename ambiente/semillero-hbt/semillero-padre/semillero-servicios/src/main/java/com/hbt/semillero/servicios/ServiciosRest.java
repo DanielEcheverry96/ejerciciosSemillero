@@ -21,12 +21,27 @@ import com.hbt.semillero.entidades.Marca;
 import com.hbt.semillero.entidades.Persona;
 import com.hbt.semillero.servicios.interfaces.IConsultasBeanLocal;
 
+/**
+ * Expone las consultas a la base de datos de la aplicación
+ * por medio de un servicio Rest
+ * PathServer para acceder -> http://127.0.0.1:8085/semillero-servicios/rest/ServiciosRest
+ * @author Daniel Echeverry
+ *
+ */
 @Path("/ServiciosRest")
 public class ServiciosRest {
 
+	/**
+	 * Interface que encapsula los metodos de consulta a la base de datos
+	 */
 	@EJB
 	private IConsultasBeanLocal consultasBean; 
 	
+	/**
+	 * Permite obtener todas las marcas almacenadas en la base de datos
+	 * El acceso al metodo GET por el servicio Rest se hace por medio del pathServer/consultarMarcas 
+	 * @return Lista con objetos JSON que contiene las marcas
+	 */
 	@GET
 	@Path("/consultarMarcas")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -40,6 +55,12 @@ public class ServiciosRest {
 		return retorno;
 	}
 	
+	/**
+	 * Permite obtener todas las lineas por marca almacenadas en la base de datos
+	 * El acceso al metodo GET por el servicio Rest se hace por medio del pathServer/consultarLineas 
+	 * @param idMarca Campo que identifica a una marca con la que quiero obtener las lineas
+	 * @return Lista con objetos JSON que contiene las lineas de la marca
+	 */
 	@GET
 	@Path("/consultarLineas")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -59,6 +80,16 @@ public class ServiciosRest {
 		return retorno;
 	}
 	
+	/**
+	 * Permite crea personas para almacenarlas en la base de datos
+	 * El acceso al metodo POST por el servicio Rest se hace por medio del pathServer/crearPersona 
+	 * @param personaDTO Objeto de tipo Persona
+	 * @return Objeto de tipo ResultadoDTO que contiene el resultado de la consulta
+	 * {
+	 * 		exitoso: false,
+	 * 		mensaje: "No se pudo ingresar a la persona"
+	 * }
+	 */
 	@POST
 	@Path("/crearPersona")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -75,6 +106,15 @@ public class ServiciosRest {
 		return retorno;
 	}
 	
+	
+	
+	/**
+	 * Permite obtener las personas con cierto Tipo de Identificación y Número Identificación
+	 * El acceso al metodo GET por el servicio Rest se hace por medio del pathServer/consultarPersonas
+	 * @param tipoIdentificacion Tipo de Identificación de la persona -> ["CC", "TI", "Pasaporte"]
+	 * @param numeroIdentificacion Número de Identificación de la persona
+	 * @return Lista con objetos JSON que contiene las personas
+	 */
 	@GET
 	@Path("/consultarPersonas")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -97,6 +137,16 @@ public class ServiciosRest {
 		return retorno;
 	}
 	
+	/**
+	 * Permite actualizar una persona almacenada en la base de datos
+	 * El acceso al metodo PUT por el servicio Rest se hace por medio del pathServer/actualizarPersona 
+	 * @param personaDTO Objeto de tipo Persona
+	 * @return Objeto de tipo ResultadoDTO que contiene el resultado de la consulta
+	 * {
+	 * 		exitoso: false,
+	 * 		mensaje: "No se pudo actualizar la persona"
+	 * }
+	 */
 	@PUT
 	@Path("/actualizarPersona")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -115,10 +165,10 @@ public class ServiciosRest {
 	
 	
 	/**
-	 * Asignar a un objeto MarcaDTO los valores de las propiedades
+	 * Asignar a un objeto MarcaDTO los valores de las propiedades de un objeto Marca
 	 * de un objeto Marca
-	 * @param marca
-	 * @return
+	 * @param marca Marca a convertir
+	 * @return Objeto MarcaDTO
 	 */
 	private MarcaDTO construirMarcaDTO(Marca marca) {
 		MarcaDTO marcaDTO = new MarcaDTO();
